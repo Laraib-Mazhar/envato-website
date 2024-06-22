@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task13</title>
+    <link rel="shortcut icon" href="../favicon.ico"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel ="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <style>
+         /* ///////////////////////////////////////////header////////////////////////// */
+        body{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+            font-family: sans-serif;
+            /* background-color: #FFFFFF; */
+            background-color: #F7F7F7;
+            line-height: 1.3;
+            font-weight: 400;
+            font-size: 14px;
+        }
+        #envato{
+            height: 50px;
+            font-size: 15px;
+            background-color:#262626;
+        }
+        #envato-left{
+            display: inline-block;
+            margin-left: 10px;
+            color: white;
+            background-image: url('envato.png');
+            height: 50px;
+            width: 250px;
+            /* margin-top: -15px; */
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #envato-right{
+            margin-right: 25px;
+            float: right;
+            color: black;
+            display: inline-block;
+        }
+        #envato-btn{
+            margin-top: 10px;
+            padding: 6px 15px;
+            border-radius: 5px;
+            background-color: #7AA93C;
+            color: white;
+            border: none;
+        }
+        #header{
+            height: 80px;
+            font-size: 15px;
+            background-color:#FFFF;
+        }
+        #header-left{
+            display: inline-block;
+            margin-left: 80px;
+            color: white;
+            background-image: url('logo.png');
+            height: 80px;
+            width: 200px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        #header-right{
+            margin-right: 25px;
+            float: right;
+            color: black;
+            display: inline-block;
+        }
+        #header-right,a{
+            margin-right: 45px;
+            margin-top: 30px;
+        }
+        .anchor:hover {
+            color: #444;
+            font-weight: 700;
+            font-size: 15px;
+            border-top: 2px solid red;
+            padding-top: 30px;
+        }
+        
+        /* ///////////////////////////////////////////section1////////////////////////// */
+
+        .slider-container {
+            overflow: hidden;
+        }
+        
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .slide {
+            position: relative;
+            min-width: 100%;
+            height: 600px;
+        }
+        
+        .img { 
+            width: 100%;
+            height: 800px;
+        }
+        
+        .slide-text {
+            position: absolute;
+            bottom: 5px;
+            left: 20px;
+            background-color: none;
+            color: white;
+            padding: 10px;
+            font-size: 40px;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        
+        .slide.active .slide-text {
+            opacity: 1;
+            padding-bottom: 200px;
+        }
+
+        /* ///////////////////////////////////////////section2////////////////////////// */
+        
+        #section2{
+            margin-top: 40px;
+            background-color: #FFFFFF;
+        }
+        .service-name {
+            text-align: center;
+            font-size: 21px;
+            font-weight: 300;
+            font-family: Roboto Slab, sans-serif;
+        }
+        .service-text {
+            text-align: center;
+            font-weight: 300;
+            margin-top: 15px;
+            /* border-top: 1px solid #EEEEEE; */
+            padding-top: 15px;
+            padding-bottom: 100px;
+        }
+        .fa-solid {
+            font-size: 44px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            color: #F44336;
+            margin: auto;
+            display: table;
+            background-color: white;
+            margin-bottom: 5px;
+            width: 85px;
+            height: 85px;
+            transition: all 0.25s linear;
+            line-height: 85px;
+            border-radius: 50%;
+        }
+        .fa-solid:hover{
+            background-color: #F44336;
+            color: white;
+        }
+        .line{
+            color:  #EEEEEE;
+            text-align: center;
+        }
+    
+        /* ///////////////////////////////////////////section3////////////////////////// */
+    
+        #section3{
+            text-align: center;
+            background-color: #F7F7F7;
+            padding-top: 100px;
+        }
+        #sec3{
+            background-color: #F7F7F7;
+        }
+
+        .image-gallery {
+            display: flex;
+            margin-left:50px ;
+        }
+
+        .image-container {
+            position: relative;
+            margin: 20px;
+            margin-top: 50px;
+        }
+
+        img {
+            width: 350px;
+            height: 250px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .hover-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            text-align: center;
+            padding-top: 100px;
+            width: 350px;
+            height: 250px;
+            /* padding: 80px; */
+            border-radius: 3px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .image-container:hover .hover-text {
+            opacity: 0.9;
+        }
+
+        /* ///////////////////////////////////////////section4////////////////////////// */
+
+        #section4{
+            margin-top: 50px;
+            background: #fff url('parallax.jpg') center center/cover no-repeat fixed;
+            height: 400px;
+            line-height: 5px;
+            filter: brightness(83%);
+        }
+
+        /* ///////////////////////////////////////////section5////////////////////////// */
+        #section5{
+            text-align: center;
+            background-color: #F7F7F7;
+            padding-top: 100px;
+        }
+
+        /* ///////////////////////////////////////////section6////////////////////////// */
+        #section6{
+            text-align: center;
+            background-color: #F7F7F7;
+            padding-top: 100px;
+        }
+        .section6a{
+            padding-left: 500px;
+            font-size: 50px;
+        }
+        .section6b{
+            color: rgb(161, 161, 24);
+            padding-left: 600px;
+            font-size: 50px;
+            margin-top: -25px;
+        }
+        .section6l{
+            float: left;
+            display: inline-block;
+            padding-left: 10px;
+            
+        }
+        .section6r{
+            float: left;
+            font-size: 20px;
+            display: inline-block;
+        }
+        .section6c{
+            width:400px;
+            margin-left:10px;
+        }
+        #section6left{
+            float: left;
+            height: 200px;
+            width: 650px;
+            /* border: 2px solid; */
+            padding-top: 25px;
+            background-color: white;
+            margin-left: 50px;
+        }
+        #section6right{
+            float: right;
+            margin-right: 40px;
+            height: 200px;
+            padding-top: 25px;
+            width: 600px;
+            /* border: 2px solid; */
+            background-color: white;
+        }
+        .image{
+            width: 100px;
+            height: 100px;
+        }
+
+        /* ///////////////////////////////////////////section7////////////////////////// */
+        #section7{
+            text-align: center;
+            background-color: #F7F7F7;
+            margin-top: 650px;
+        }
+        .hov-img:hover img{
+            transform: scale(1.8);
+        }
+
+        /* ///////////////////////////////////////////section7////////////////////////// */
+          /* Main styles for the footer */
+        .footer{
+        background-color: #333;
+        color: #fff;
+        padding: 40px 20px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 50px;
+        justify-content: space-between;
+        }
+
+        /* Footer columns for different screen sizes */
+        .footer-column {
+        flex: 1;
+        min-width: 200px;
+        margin: 10px;
+        }
+
+        /* Styling for links in the footer */
+        .footer-column a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 5px;
+        }
+
+        /* Media query for smaller screens (tablets and below) */
+        @media only screen and (max-width: 768px) {
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+            .footer-column {
+                flex: 1 0 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- //////////////////////////////////envato(start)////////////////////////////////////// -->
+
+    <div id="envato">
+        <div id="envato-left">
+        </div>
+        <div id="envato-right">
+            <button id="envato-btn">Buy Now</button>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <!-- //////////////////////////////////enveto(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////haeder(start)////////////////////////////////////// -->
+
+    <div id="header">
+        <div id="header-left">
+            <!-- <img src="E:\xampp\htdocs\web-course\logo.png" height="100px" width="100px" alt="logo"> -->
+        </div>
+        <div id="header-right">
+            <a class="anchor">Home</a>
+            <a class="anchor">Pages</a>
+            <a class="anchor">Portfolio</a>
+            <a class="anchor">The Blog</a>
+            <a class="anchor">Short Codes </a>
+            <i class="icon-basket"></i>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <!-- //////////////////////////////////haeder(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section1(start)////////////////////////////////////// -->
+
+    <div class="slider-container">
+        <div class="slider">
+            <div class="slide">
+                <img src="./slide.jpg" alt="Image1"class="img">
+                <div style=" text-align: center;padding-left:450px;" class="slide-text">
+                <h3 style="font-size: 25px;">
+                    Our Company Will Help With Your Problem 
+                </h3>
+                <h2 style="font-size: 40px;">_____________________</h2> 
+                <h1 style="display: inline-block; font-size: 55px;">Clean</h1>
+                <h2 style="display: inline-block; color: red ; font-size: 50px;">.</h2>
+                <h1 style="display: inline-block; font-size: 55px;">Simple</h1></h2> 
+                <h2 style="display: inline-block; color: red; font-size: 50px;">.</h2>
+                <h1 style="display: inline-block; font-size: 55px;">Perfect</h1>
+                <br>
+                <button style="border: 2px solid white;font-size: 25px;padding-left: 400px; margin-top: 20px; color: white; padding: 5px 15px; background-color: #B8B7BB;">
+                    Purchase Now
+                </button>
+            </div>
+        </div>
+        <div class="slide">
+            <img src="./slide2.jpg" alt="Image 2" class="img">
+            <div style=" text-align: center;padding-left:350px;" class="slide-text">
+                <h1 style="font-size: 50px;">
+                    Primary - Made For Real Buisness
+                </h1>
+                <h2 style="font-size: 40px; margin-top: -20px;">____________________</h2> 
+                <h4 style="font-size: 25px; margin-top: 20px;">Every Line of Code is written with Love</h4>
+                <button style="border: 2px solid white;font-size: 25px;padding-left: 400px; margin-top: 20px; color: white; padding: 5px 15px; background-color: #B8B7BB;">
+                    Purchase Now
+                </button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- //////////////////////////////////section1(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section2(start)////////////////////////////////////// -->
+    <div id="section2">
+        <div class="container marg75">
+            <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-ms-12">
+                    <div class="fa-solid fa-layer-group"></div>
+                    <div class="service-name">Minimal Design</div>
+                    <h3 class="line">_________</h3>
+                    <div class="service-text">Remainder household direction zealously the unwilling roused enable estate</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-ms-12">
+                    <div class="fa-solid fa-heart"></div>
+                    <div class="service-name">Love Our Clients</div>
+                    <h3 class="line">_________</h3>
+                    <div class="service-text">Remainder household direction zealously the unwilling roused enable estate</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-ms-12">
+                    <div class="fa-solid fa-tools"></div>
+                    <div class="service-name">Powerful & Flexible</div>
+                    <h3 class="line">_________</h3>
+                    <div class="service-text">Remainder household direction zealously the unwilling roused enable estate</div>
+            </div>
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6 col-ms-12">
+                    <div class="fa-solid fa-globe"></div>
+                    <div class="service-name">Premium Support</div>
+                    <h3 class="line">_________</h3>
+                    <div class="service-text">Remainder household direction zealously the unwilling roused enable estate</div>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- //////////////////////////////////section2(end)////////////////////////////////////// -->
+
+        <!-- //////////////////////////////////section3(start)////////////////////////////////////// -->
+    <div id="sec3">
+        <div>
+            <div id="section3">
+                <h2 style="font-size: 50px; color: #787878;">Recent Works</h2>
+                <h3 style="color: red;">_______</h3>
+                <h5 style="font-size: 35px; color: #787878">Best of the best</h5>
+            </div>
+        </div>
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="./11.jpg" alt="Image 1">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="22.jpg" alt="Image 2">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="33.jpg" alt="Image 3">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="image-gallery">
+            <div class="image-container" >
+                <h3 style="padding-left: 130px; margin-top: -50px;">Paint Drips</h3>
+                <h5 style="padding-left: 130px;">by Jason Travis</h5>
+            </div>
+            <div class="image-container">
+                <h3 style="padding-left: 230px; margin-top: -50px;">Pantone Time!</h3>
+                <h5 style="padding-left: 230px;">by Jonathin Howell</h5>
+            </div>
+            <div class="image-container">
+                <h3 style="padding-left: 250px; margin-top: -50px;">House / RPG</h3>
+                <h5 style="padding-left: 250px;">by Creative Mints</h5>
+            </div>
+        </div>
+        <br>
+        <div class="image-gallery">
+            <div class="image-container">
+                <img src="44.png" alt="Image4">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ; margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ; margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="55.jpg" alt="Image5">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+            <div class="image-container">
+                <img src="66.jpg" alt="Image6">
+                <div class="hover-text">
+                    <i class="fa-solid fa-search" 
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                    <i class="fa-solid fa-chain"
+                        style="color: white; background:none ;margin-top: -20px; font-size: 30px; padding: 2px; display: inline-block;">
+                    </i>
+                </div>
+            </div>
+        </div>
+        <div class="image-gallery">
+            <div class="image-container">
+                <h3 style="padding-left: 110px; margin-top: -50px;">Map pins - heart</h3>
+                <h5 style="padding-left: 110px;">by Eddie Lobanvoskiy</h5>
+            </div>
+            <div class="image-container">
+                <h3 style="padding-left: 170px; margin-top: -50px;">Handbook for Brands</h3>
+                <h5 style="padding-left: 170px;">by Maykel Loomans</h5>
+            </div>
+            <div class="image-container">
+                <h3 style="padding-left: 210px; margin-top: -50px;">First shot</h3>
+                <h5 style="padding-left: 210px;">by Tiago Calliari</h5>
+            </div>
+        </div>
+    </div>
+    <button style="border: 5px solid white;box-shadow: 0 0 5px purple, 0 0 15px white; font-size: 25px;margin-left: 560px; margin-top: 20px; color: black; padding: 5px 15px; background-color: #d4d3d6;">
+        Load Full Portfolio
+    </button>
+
+    <!-- //////////////////////////////////section3(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section4(start)////////////////////////////////////// -->
+
+    <div id="section4">
+        <div style=" color: white;margin-left: 50px; width: 300px;height: 350px; text-align: center; display: inline-block;">
+                <i class="fa-regular fa-face-smile " 
+                style="color: white; background: none; padding: 15px; font-size: 60px;" >
+                </i>  
+                <h1>841</h1>
+                <h3>Happy Clients</h3>
+        </div>
+        <div style=" color: white; width: 300px;height: 350px; text-align: center; display: inline-block;">
+            <i class="fa-solid fa-screwdriver-wrench"
+            style="color: white; background: none;  padding-top: 100px; font-size: 60px;" >
+            </i>  
+            <h1>593</h1>
+            <h3>Projects Completed</h3>
+        </div>
+        <div style=" color: white; width: 300px;height: 350px; text-align: center; display: inline-block;">
+            <i class="fa-solid fa-trophy" 
+            style="color: white; background: none;  padding-top: 100px; font-size: 60px;" >
+            </i>  
+            <h1>752</h1>
+            <h3>Awards Won</h3>
+        </div>
+        <div style=" color: white; width: 300px;height: 350px;text-align: center; display: inline-block;">
+            <i class="fa-solid fa-light fa-envelope-open-text" 
+            style="color: white; background: none;  padding-top: 100px; font-size: 60px;" >
+            </i>  
+            <h1>802</h1>
+            <h3>Letters Sent</h3>
+        </div>
+    </div>
+
+    <!-- //////////////////////////////////section4(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section5(start)////////////////////////////////////// -->
+    <div class="section5">
+        <div id="section5">
+            <h2 style="font-size: 50px; color: #5c5b5b;">Our Services</h2>
+            <h3 style="color: red;">_______</h3>
+            <h5 style="font-size: 35px; color:  #5c5b5b">Core Features</h5>
+        </div>
+            <div style="margin-top: 50px;">
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block; margin-left: 50px;">
+                    <i class="fa-solid fa-gauge" style="color: #ff0505; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">High Quality Code</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block;">
+                    <i class="fa-solid fa-record-vinyl " style="color: #ff1605; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">SEO Optimized</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block;">
+                    <i class="fa-solid fa-puzzle-piece" style="color: #f91201; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">Tons of Shortcodes</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block; margin-left: 50px;">
+                    <i class="fa-solid fa-mobile-screen-button" style="color: #f91201; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">Responsive Ready</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block;">
+                    <i class="fa-solid fa-sliders" style="color: #f91201; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">Easy to Customize</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+                <div style="width : 400px ; height : 200px ; margin-top: 10px; display: inline-block;">
+                    <i class="fa-solid fa-folder-tree" style="color: #f91201; display: inline-block; background: none;"></i>
+                    <h3 style="padding-left: 110px; margin-top: -50px;">Well Documented</h3>
+                    <h5 style="padding-left: 110px;">Remainder household direction zealously the unwilling
+                    Roused enable estate to old country</h5>
+                </div>
+            </div>
+    </div>
+
+    <!-- //////////////////////////////////section5(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section6(start)////////////////////////////////////// -->
+
+    <div id="section6">
+        <h2 style="font-size: 50px; color: #5c5b5b;">Testimonials</h2>
+        <h3 style="color: red;">_______</h3>
+        <h5 style="font-size: 30px; color:  #5c5b5b">Happy Customers</h5>
+    </div>
+    <div id="section6left" style="margin-top: 50px;">
+        <div class="section6l" style="margin-left: 30px;">
+            <img src=".\mike.jpg" class="image" style="border-radius: 50px;">
+        </div>
+        <div class="section6r">
+            <h3 class="section6c" style="text-align: center; display: inline-block;">
+                <span style="font-size: 35px;">John Doe</span>
+                <span>- Google Inc.</span>
+            </h3>
+            <p class="section6c"> General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                To unreserve projection introduced invitation travel
+            </p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="section6right" style="margin-top: 50px;">
+        <div class="section6l">
+            <img src=".\mila.png" class="image" style="border-radius: 50px;">
+        </div>
+        <div class="section6r">
+            <h3 class="section6c" style="text-align: center; display: inline-block;">
+                <span style="font-size: 35px;">Michel Artez</span>
+                <span> - Yahoo Inc.</span>
+            </h3>
+            <p class="section6c"> General enquire picture letters garrets on offices. Style begin mr heard in music tried. 
+                To unreserve projection introduced invitation travel
+            </p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="section6left" style="margin-top: 50px;">
+        <div class="section6l" style="margin-left: 30px;">
+            <img src=".\mike.png" class="image" style="border-radius: 50px;">
+        </div>
+        <div class="section6r">
+            <h3 class="section6c" style="text-align: center; display: inline-block;">
+                <span style="font-size: 35px;">Mila Markovna</span>
+                <span> - Apple Inc.</span>
+            </h3>
+            <p class="section6c">General enquire picture letters garrets on offices. Style begin mr heard in music tried.
+                To unreserve projection introduced invitation travel
+            </p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="section6right" style="margin-top: 50px;">
+        <div class="section6l">
+            <img src=".\jordan.png" class="image" style="border-radius: 50px;">
+        </div>
+        <div class="section6r">
+            <h3 class="section6c" style="text-align: center; display: inline-block;">
+                <span style="font-size: 35px;">John Romer</span>
+                <span> - Yahoo Inc.</span>
+            </h3>
+            <p class="section6c"> General enquire picture letters garrets on offices. Style begin mr heard in music tried. 
+                To unreserve projection introduced invitation travel
+            </p>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+
+    <!-- //////////////////////////////////section6(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section7(start)////////////////////////////////////// -->
+
+    <div id="section7">
+        <h2 style="font-size: 50px; color: #5c5b5b;">From Blog</h2>
+        <h3 style="color: red;">_______</h3>
+        <h5 style="font-size: 30px; color:  #5c5b5b">Awsome Posts</h5>
+    </div>
+
+    <div class="image-gallery">
+        <div class="image-container">
+            <img src=".\blog1.jpg" alt="blog1" class="hov-img">
+            <div class="hover-text">
+                <i class="fa-solid fa-pencil" 
+                    style="color: white; background:none ; margin-top: -20px; font-size: 40px; padding: 2px; display: inline-block;">
+                </i>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src=".\blog2.jpg" alt="blog2" class="hov-img">
+            <div class="hover-text">
+                <i class="fa-solid fa-camera " 
+                    style="color: #FFFFFF; background:none ;margin-top: -20px; font-size: 40px; padding: 2px; display: inline-block;">
+                </i>
+            </div>
+        </div>
+        <div class="image-container">
+            <img src=".\blog3.jpg" alt="blog3" class="hov-img">
+            <div class="hover-text">
+                <i class="fa-solid fa-message" 
+                    style="color: white; background:none ;margin-top: -20px; font-size: 40px; padding: 2px; display: inline-block;">
+                </i>
+            </div>
+        </div>
+    </div>
+    <div class="image-gallery">
+        <div class="image-container">
+            <h3 style="padding-left: 5px; margin-top: -50px; width: 400px;" >You fully seems stand inquietude</h3>
+            <h6 style="padding-left: 40px;">18 January, 2017 by Dankov Themes, in Envato</h6>
+        </div>
+        <div class="image-container">
+            <h3 style="margin-left: -20px; margin-top: -50px; width: 400px;">Conduct esteems cottage pasture</h3>
+            <h6 style="padding-left: 10px;">10 February, 2017 by Dankov Themes, in Funny</h6>
+        </div>
+        <div class="image-container">
+            <h3 style="margin-left: -20px; margin-top: -50px; width: 400px;">Learning why hastened  cheerful</h3>
+            <h6 style="padding-left: 10px;">17 January, 2017 by Dankov Themes , in Travel</h6>
+        </div>
+    </div>
+
+    <!-- //////////////////////////////////section7(end)////////////////////////////////////// -->
+
+    <!-- //////////////////////////////////section8(start)////////////////////////////////////// -->
+
+        <div class="footer">
+            <div class="footer-column">
+            <h3>About Us</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget dictum risus.</p>
+            <a href="#">Contact Us</a>
+            <a href="#">Our Team</a>
+            </div>
+            <div class="footer-column">
+            <h3>Services</h3>
+            <a href="#">Web Design</a>
+            <a href="#">Graphic Design</a>
+            <a href="#">Digital Marketing</a>
+            </div>
+            <div class="footer-column">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+            </div>
+            <div class="footer-column">
+            <h3>Subscribe</h3>
+            <p>Stay updated with our latest news and promotions.</p>
+            <input type="email" placeholder="Enter your email">
+            <button>Subscribe</button>
+            </div>
+        </div>
+
+    <!-- //////////////////////////////////section8(end)////////////////////////////////////// -->
+
+    <script src="./slide.js"></script>
+</body>
+</html> 
